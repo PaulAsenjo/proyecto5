@@ -9,7 +9,7 @@ export const Navbar = () => {
             <ul className="ul-style">
                 <Link to={"/"}>Inicio</Link>
                 <Link to={"/about"}>Sobre Chuck</Link>
-                <Link to={"/joke"}>Chistes</Link>  
+                <Link to={"/chistes"}>Chistes</Link>  
             </ul>
             </div>
 

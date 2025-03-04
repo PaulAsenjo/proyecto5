@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-
+import { Select, MenuItem } from "@mui/material";
+import "./Joke.css"
 
 export const Joke = () => {
       const [joke, setJoke] = useState(null);
       const [categories, setCategories] = useState([]);
-      const [selectedCategory, setSelectedCategory] = useState("");
+      const [selectedCategory, setSelectedCategory] = useState("Aleatorio");
       const [loading, setLoading] = useState(true);
       const [error, setError] = useState(null);
     
@@ -31,7 +32,7 @@ export const Joke = () => {
         setLoading(true);
         setError(null);
         try {
-          const url = selectedCategory
+          const url = selectedCategory !== "Aleatorio"
             ? `https://api.chucknorris.io/jokes/random?category=${selectedCategory}`
             : "https://api.chucknorris.io/jokes/random";
           const response = await fetch(url);
@@ -55,16 +56,31 @@ export const Joke = () => {
       if (error) return <p>Error: {error.message}</p>;
     
       return (
-        <div>
-          <select value={selectedCategory} onChange={handleCategoryChange}>
+        <div className="contenedor-select">
+          {/* <select value={selectedCategory} onChange={handleCategoryChange}>
             <option value="">Aleatorio</option>
             {categories.map((category) => (
               <option key={category} value={category}>
                 {category}
               </option>
             ))}
-          </select>
-          <button onClick={fetchJoke}>Obtener broma</button>
+          </select>*/}
+          
+          
+
+          <Select sx={{minWidth: 140}} value={selectedCategory} onChange={handleCategoryChange}>
+            <MenuItem value="Aleatorio">Aleatorio</MenuItem> 
+          {categories.map((category) => (
+              <MenuItem key={category} value={category}>
+                {category}
+              </MenuItem>
+            ))}
+          </Select>
+          
+          <button className="boton-style" onClick={fetchJoke}>
+          <img className="img-boton" src="/boton-select.png" alt="Obtener chiste" />
+          </button>
+          
           {joke && <p>{joke.value}</p>}
         </div>
       );

@@ -6,7 +6,7 @@ export const Home = () => {
         <>
            
            <button className="boton-home" type="button">
-              <img className="image-boton" src="boton.png" alt="Mi botón" />
+              <img className="image-boton" src="boton.png" alt="Botón home" />
            </button>  
 
            <div className="header-bg"></div>  

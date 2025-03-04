@@ -1,0 +1,17 @@
+.contenedor-select {
+  position: absolute;
+  top: 25rem;
+  left: 6rem;
+}
+
+.boton-style{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer; 
+
+}
+.img-boton {
+  
+  width: 50%;
+}

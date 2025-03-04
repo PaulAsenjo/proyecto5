@@ -1,15 +1,14 @@
 .header-bg { 
-
   background-image: url('/bannerHome.png'); 
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
-  padding: 23rem; 
+  padding: 25rem; 
 } 
 
 .boton-home {
   position: absolute;
-  top: 35rem;
+  top: 36rem;
   left: 20rem;
   background: none;
   border: none;
