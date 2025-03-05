@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { Select, MenuItem } from "@mui/material";
+import { Select, MenuItem, Button, Box } from "@mui/material";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallBack } from "../Error/ErrorFallBack";
+
 import "./Joke.css"
 
 export const Joke = () => {
@@ -56,35 +59,29 @@ export const Joke = () => {
       if (error) return <p>Error: {error.message}</p>;
     
       return (
-        <div className="contenedor-select">
-          {/* <select value={selectedCategory} onChange={handleCategoryChange}>
-            <option value="">Aleatorio</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>*/}
-          
-          
-
-          <Select sx={{minWidth: 140}} value={selectedCategory} onChange={handleCategoryChange}>
-            <MenuItem value="Aleatorio">Aleatorio</MenuItem> 
-          {categories.map((category) => (
+       <ErrorBoundary FallbackComponent={ErrorFallBack}>
+        <div className="contenedor-select "> 
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0 }}> {/* Fila para Select y Button */}
+            <Select sx={{ minWidth: 140, marginBottom: '25px' }} value={selectedCategory} onChange={handleCategoryChange}>
+              <MenuItem value="Aleatorio">Aleatorio</MenuItem>
+                 {categories.map((category) => (
               <MenuItem key={category} value={category}>
-                {category}
+                 {category}
               </MenuItem>
-            ))}
-          </Select>
-          
-          <button className="boton-style" onClick={fetchJoke}>
-          <img className="img-boton" src="/boton-select.png" alt="Obtener chiste" />
-          </button>
-          
-          {joke && <p>{joke.value}</p>}
-        </div>
-      );
-    }
+              ))}
+            </Select>
+    
+            <Button className="boton-style" onClick={fetchJoke}>
+              <img className="img-boton" src="/boton-select.png" alt="Obtener chiste" />
+            </Button>
+         </Box>
+
+      {joke && <p className="joke-paragraph">{joke.value}</p>} 
+    </div>
+    </ErrorBoundary>
+  );
+};
+       
     
     
 

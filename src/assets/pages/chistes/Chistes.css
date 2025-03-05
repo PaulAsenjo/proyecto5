@@ -1,9 +1,9 @@
 .contenedor-parrafo {
     position: absolute;
     
-    width: 50% ;
+    width: 55% ;
 
-    top: 15rem;
+    top: 14rem;
     left: 6rem;
      
 } 
@@ -16,10 +16,16 @@ h1 {
     text-align: left;
 }
 
-p {
+.parrafo-chiste {
    font-family: 'Courier New', Courier, monospace;
    font-weight: 500;
    font-style: normal;
-   font-size: 1.5rem;
+   font-size: 1.8rem;
    text-align: left;
+}
+
+.image-chuck3 {
+    position: absolute;   
+    top: 5.5rem;
+    right: 2rem;
 }

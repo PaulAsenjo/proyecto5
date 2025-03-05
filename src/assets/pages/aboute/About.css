@@ -2,12 +2,18 @@
     position: absolute;
     top: 20rem;
     left: 6rem;
-    width: 50% ;
+    width: 30% ;
 
     top: 15rem;
     left: 6rem;
      
 } 
+
+.parrafo {
+    top: 20rem;
+    left: 6rem; 
+    width: 90%;
+}
 
 h1 {
     font-family: "Courier Prime", monospace;
@@ -23,3 +29,24 @@ p {
    font-size: 1.5rem;
    text-align: left;
 }
+
+.image-chuck {
+    position: absolute;   
+    top: 5.5rem;
+    right: 2rem;
+}
+
+.gif-chuck {
+    position: absolute;   
+    top: 18rem;
+    right: 3rem; 
+    width: 15%;
+}
+
+.gif-chuck2 {
+    position: absolute;   
+    top: 19rem;
+    right: 28rem;  
+    width: 15%;
+}
+
