@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { Select, MenuItem, Button, Box } from "@mui/material";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallBack } from "../Error/ErrorFallBack";
+import translate from "translate";
+
+translate.engine = "google";
+translate.key = "f6e9cd67ec5499409bd135773ecb9df5361e3f40";
 
 import "./Joke.css"
 
@@ -43,7 +47,9 @@ export const Joke = () => {
             throw new Error("No se pudo obtener la broma.");
           }
           const data = await response.json();
-          setJoke(data);
+          const translatedJoke = await translate(data.value, "es");
+
+          setJoke({ ...data, value: translatedJoke });
         } catch (err) {
           setError(err);
         } finally {
