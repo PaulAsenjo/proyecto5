@@ -7,7 +7,7 @@ export const Navbar = () => {
         <nav className="nav-container">
             <div>
             <ul className="ul-style">
-                <Link to={"/"}>Inicio</Link>
+                <Link to={"/"} >Inicio</Link>
                 <Link to={"/about"}>Sobre Chuck</Link>
                 <Link to={"/chistes"}>Chistes</Link>  
             </ul>
